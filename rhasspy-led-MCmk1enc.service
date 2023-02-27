@@ -1,0 +1,18 @@
+[Unit]
+Description=mein Rhasspy LED Mycroft Mk1 enclosure Service
+After=syslog.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/opt/Rhasspy-LED/Rhasspy-LED-MCmk1enc
+ExecStart=/usr/bin/python3 /opt/Rhasspy-LED/Rhasspy-LED-MCmk1enc/Rhasspy-LED-MCmk1enc.py
+SyslogIdentifier=rhasspyled-MCmk1enc
+StandardOutput=syslog
+StandardError=syslog
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
